@@ -17,7 +17,6 @@ macro_rules! print {
 /// Prints to the standard output, with a newline.
 #[macro_export]
 macro_rules! println {
-    () => { $crate::print!("\n") };
     ($($arg:tt)*) => {
         $crate::io::__print_impl(format_args!("{}\n", format_args!($($arg)*)));
     }
